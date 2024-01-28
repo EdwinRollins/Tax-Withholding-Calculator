@@ -1,0 +1,25 @@
+//Java program for a tax rate determinator based on weekly income
+
+Start
+
+	//Prompt the user to enter weekly income
+	Print "Enter weekly income: $"
+	Read income
+
+	//Determine tax rate based on income
+	if income < 500 then
+		taxRate = 0.10 //10%
+	else if income < 1500 then
+		taxRate = 0.15 //15%
+	else if income < 2500 then
+		taxRate = 0.20 //20%
+	else
+		taxRate = 0.30 //30%
+
+	// Calculate tax withholding
+	taxWithholding = income * taxRate
+
+	// Display weekly tax withholding
+	Print "Weekly tax withholding: $" +taxWithholding
+
+End
