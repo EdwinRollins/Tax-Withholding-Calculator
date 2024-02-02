@@ -1,25 +1,37 @@
 //Java program for a tax rate determinator based on weekly income
 
 Start
+function main():
+    // Create a Scanner object to read input from the user
+    scanner = Scanner(System.in)
+    
+    // Prompt the user to enter their weekly income
+    print("To determine your tax withholding, please enter your weekly income: $")
+    
+    // Read the user's input as a double value
+    income = scanner.nextDouble()
+    
+    // Call the getTaxRate function to determine the tax rate based on income
+    taxRate = getTaxRate(income)
+    
+    // Calculate the tax withholding amount
+    taxWithholding = income * taxRate
+    
+    // Display the calculated tax withholding amount to the user
+    print("Your Weekly tax withholding is: $" + taxWithholding)
+    
+    // Close the Scanner object
+    scanner.close()
 
-	//Prompt the user to enter weekly income
-	Print "Enter weekly income: $"
-	Read income
-
-	//Determine tax rate based on income
-	if income < 500 then
-		taxRate = 0.10 //10%
-	else if income < 1500 then
-		taxRate = 0.15 //15%
-	else if income < 2500 then
-		taxRate = 0.20 //20%
-	else
-		taxRate = 0.30 //30%
-
-	// Calculate tax withholding
-	taxWithholding = income * taxRate
-
-	// Display weekly tax withholding
-	Print "Weekly tax withholding: $" +taxWithholding
+function getTaxRate(income):
+    // Determine the tax rate based on the income
+    if income < 500:
+        return 0.10 // 10% Tax Rate
+    else if income < 1500:
+        return 0.15 // 15% Tax Rate
+    else if income < 2500:
+        return 0.20 // 20% Tax Rate
+    else:
+        return 0.30 // 30% Tax Rate
 
 End
